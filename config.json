@@ -2,23 +2,57 @@
     "llms": {
         "grok-4.1-fast": {
             "by": "x-ai",
-            "url": "x-ai/grok-4.1-fast:free"
+            "url": "x-ai/grok-4.1-fast:free",
+            "short": "fast",
+            "name": "grok 4.1"
         },
-        "mistral-small-3.2": {
+        "mistral-small-3.1": {
             "by": "mistral-ai",
-            "url": "mistralai/mistral-small-3.2-24b-instruct:free"
+            "url": "mistralai/mistral-small-3.1-24b-instruct:free",
+            "short": "quick",
+            "name": "mistral 3.1"
         },
         "nemotron-nano": {
-            "by": "nvdia",
-            "url": "nvidia/nemotron-nano-12b-v2-vl:free"
+            "by": "nvidia",
+            "url": "nvidia/nemotron-nano-12b-v2-vl:free",
+            "short": "tiny",
+            "name": "nemotron nano"
         },
         "gemma-3": {
             "by": "google",
-            "url": "google/gemma-3-12b-it:free"
+            "url": "google/gemma-3-12b-it:free",
+            "short": "general",
+            "name": "gemma 3"
         },
         "gemini-2.0": {
             "by": "google",
-            "url": "google/gemini-2.0-flash-exp:free"
+            "url": "google/gemini-2.0-flash-exp:free",
+            "short": "image",
+            "name": "gemini 2.0 - UNSTABLE"
+        },
+        "llama-3.2": {
+            "by": "openrouter",
+            "url": "meta-llama/llama-3.2-3b-instruct:free",
+            "short": "dialogue",
+            "name": "llama 3.2 - UNSTABLE"
+        },
+        "qwen3-coder": {
+            "by": "openrouter",
+            "url": "openrouter.ai/qwen/qwen3-coder:free",
+            "short": "code",
+            "name": "qwen 3 coder - UNSTABLE"
+        },
+        "qwen2.5-vl-32b-instruct": {
+            "by": "openrouter",
+            "url": "openrouter.ai/qwen/qwen2.5-vl-32b-instruct:free",
+            "short": "smart",
+            "name": "qwen 2.5 vl 32b instruct - UNSTABLE"
+        },
+        "dolphin-mistral-24b-venice-edition": {
+            "by": "cognitivecomputations",
+            "url": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+            "short": "uncensored",
+            "name": "dolphin venice edition - UNSTABLE"
         }
     }
 }

@@ -11,7 +11,7 @@ def encode_image_to_base64(image_path):
     with open(image_path, "rb") as f:
         return base64.b64encode(f.read()).decode('utf-8')
 
-def completion_stream(model_name, text_msg, image_path=None):
+def completion(model_name, text_msg, image_path=None):
     url = "https://openrouter.ai/api/v1/chat/completions"
     headers = {
         "Authorization": f"Bearer {API_KEY}",
@@ -31,7 +31,7 @@ def completion_stream(model_name, text_msg, image_path=None):
     payload = {
         "model": model_name,
         "messages": messages,
-        "stream": True  # <-- enable streaming
+        "stream": True
     }
 
     with requests.post(url, headers=headers, json=payload, stream=True) as resp:
@@ -41,14 +41,12 @@ def completion_stream(model_name, text_msg, image_path=None):
         for line in resp.iter_lines():
             if line:
                 decoded = line.decode('utf-8')
-                # OpenRouter streaming sends data in "data: {...}" lines
                 if decoded.startswith("data: "):
                     data_json = decoded[len("data: "):].strip()
                     if data_json == "[DONE]":
                         break
                     try:
                         chunk = json.loads(data_json)
-                        # Each chunk may contain partial message content
                         content_chunk = chunk["choices"][0]["delta"].get("content")
                         if content_chunk:
                             yield content_chunk
